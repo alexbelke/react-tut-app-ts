@@ -1,5 +1,6 @@
 import React from "react";
-import Square from "./Square";
+import Square from "./Square.tsx";
+
 const Board = (props) => {
   const renderSquare = (i) => {
     return <Square value={props.squares[i]} onClick={() => props.onClick(i)} />;
