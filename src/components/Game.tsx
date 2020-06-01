@@ -1,6 +1,7 @@
 import * as React from "react";
 import { calculateWinner } from "../util/utilFunctions";
 import Board from "./Board";
+import Button from "@material-ui/core/Button";
 
 type State = {
   history: { squares: string[] }[];
@@ -57,7 +58,13 @@ class Game extends React.Component<{}, State> {
       const desc = move ? "Go to move #" + move : "Go to game start";
       return (
         <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          <Button
+            onClick={() => this.jumpTo(move)}
+            variant="contained"
+            color="primary"
+          >
+            {desc}
+          </Button>
         </li>
       );
     });
